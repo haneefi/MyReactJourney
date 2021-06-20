@@ -4,12 +4,17 @@ import Header from './components/Header';
 import { useState } from 'react';
 
 function App() {
-  const t=new Date();
-  const [time,setTime]=useState(t.toString());
+  var d = new Date();
+var datetext = d.toTimeString();
+datetext = datetext.split(' ')[0];
+  const [time,setTime]=useState(datetext.toString());
 
 
   setTimeout(()=>{
-    setTime(new Date().toString());
+    d = new Date();
+datetext = d.toTimeString();
+datetext = datetext.split(' ')[0];
+    setTime(datetext.toString());
   },1000)
 
   return (
